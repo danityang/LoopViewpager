@@ -58,6 +58,7 @@ public class Adapter extends PagerAdapter{
     public Object instantiateItem(ViewGroup container, int position) {// 实例化
         int realPosition = toRealPosition(position);
         iPositionListener.selectedPosition(realPosition);
+		container.removeView(viewList.get(realPosition));
         container.addView(viewList.get(realPosition));
         return viewList.get(realPosition);
     }
